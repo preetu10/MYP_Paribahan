@@ -106,7 +106,10 @@ function setDiscount(discount){
 
 document.getElementById('passenger-phone').addEventListener('keyup', function(event){
     const value=event.target.value;
-    if(count>0 && value.length!=0){
+    if(count===0 && value.length!=0){
+        alert('please choose minimum one seat first');
+    }
+    else if(count>0 && value.length!=0){
         const nextBtn=document.getElementById('next');
         nextBtn.disabled=false;
     }
